@@ -1,0 +1,14 @@
+{
+  "name": "watchit",
+  "version": "1.0.0",
+  "description": "an app for recommending movies",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ibronmu",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
