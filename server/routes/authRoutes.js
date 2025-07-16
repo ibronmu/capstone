@@ -1,8 +1,26 @@
 const express = require('express');
 const router = express.Router();
-const { register, login } = require('../controllers/authController');
 
-router.post('/register', register);
-router.post('/login', login);
+const {
+  addMovie,
+  getAllMovies,
+  getMovieById,
+  deleteMovie,
+  likeMovie,
+  rateMovie
+} = require('../controllers/movieControllers');
+const authMiddleware = require('../middlewares/authMiddleware')
+
+// Public
+router.get('/', getAllMovies);
+router.get('/:id', getMovieById);
+
+// Admin-like
+router.post('/', addMovie);
+router.delete('/:id', deleteMovie);
+
+// Protected (require login)
+router.post('/:id/like', authMiddleware, likeMovie);
+router.post('/:id/rate', authMiddleware, rateMovie);
 
 module.exports = router;

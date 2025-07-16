@@ -14,6 +14,8 @@ app.use(express.json());
 //   res.send('API is working 🎬');
 // });
 const authRoutes = require('./routes/authRoutes');
+const movieRoutes = require('./routes/movieRoutes');
+app.use('/api/movies', movieRoutes);
 
 app.use('/api/auth', authRoutes);
 
