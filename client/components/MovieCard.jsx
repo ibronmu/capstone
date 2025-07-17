@@ -1,7 +1,6 @@
 // src/components/MovieCard.jsx
 import api from '../services/api';
 import { useState } from 'react';
-
 const MovieCard = ({ movie, onRate }) => {
   const [likes, setLikes] = useState(movie.likes || 0);
   const [rating, setRating] = useState(null);

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import api, { setAuthToken } from '../services/api';
-import MovieCard from '../components/MovieCard';
+import MovieCard from '../components/Moviecard';
 
 const Home = () => {
     if (!localStorage.getItem('token')) {
