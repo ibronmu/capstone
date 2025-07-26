@@ -15,9 +15,9 @@ app.use(express.json());
 // });
 const authRoutes = require('./routes/authRoutes');
 const movieRoutes = require('./routes/movieRoutes');
-app.use('/api/movies', movieRoutes);
+app.use('/movies', movieRoutes);
 
-app.use('/api/auth', authRoutes);
+app.use('/auth', authRoutes);
 
 
 const PORT = process.env.PORT || 5000;

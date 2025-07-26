@@ -8,5 +8,5 @@ router.post('/',addMovie);
 router.get('/', getAllMovies);
 router.get('/:id', getMovieById);
 router.delete('/:id', deleteMovie);
-router.get('/recommend/me', authMiddleware, getRecommendedMovies);
+router.get('/recommend/me', getRecommendedMovies);
 module.exports = router;

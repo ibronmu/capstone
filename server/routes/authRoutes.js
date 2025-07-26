@@ -20,7 +20,7 @@ router.post('/', addMovie);
 router.delete('/:id', deleteMovie);
 
 // Protected (require login)
-router.post('/:id/like', authMiddleware, likeMovie);
-router.post('/:id/rate', authMiddleware, rateMovie);
+router.post('/:id/like', likeMovie);
+router.post('/:id/rate', rateMovie);
 
 module.exports = router;

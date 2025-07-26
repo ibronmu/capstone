@@ -12,7 +12,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await api.post('/auth/register', form);
+      const res = await api.post('/register', form);
       localStorage.setItem('token', res.data.token);
       navigate('/home');
     } catch (err) {
