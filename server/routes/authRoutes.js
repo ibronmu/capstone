@@ -9,8 +9,10 @@ const {
   likeMovie,
   rateMovie
 } = require('../controllers/movieControllers');
-const authMiddleware = require('../middlewares/authMiddleware')
-
+const {login , register} = require('../controllers/authController')
+//user
+router.post('/register',register)
+router.post('/login',login)
 // Public
 router.get('/', getAllMovies);
 router.get('/:id', getMovieById);

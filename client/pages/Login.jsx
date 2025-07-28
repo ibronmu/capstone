@@ -12,10 +12,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await api.post('/auth/login', form);
-      const token = res.data.token;
-      localStorage.setItem('token', token);
-      setAuthToken(token);
+      
       navigate('/home');
     } catch (err) {
       alert(err.response?.data?.msg || 'Login failed');

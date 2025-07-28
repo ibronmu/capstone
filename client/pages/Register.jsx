@@ -13,7 +13,7 @@ const Register = () => {
     e.preventDefault();
     try {
       const res = await api.post('/register', form);
-      localStorage.setItem('token', res.data.token);
+      
       navigate('/home');
     } catch (err) {
       alert(err.response?.data?.msg || 'Registration failed');
