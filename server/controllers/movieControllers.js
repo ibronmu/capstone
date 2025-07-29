@@ -13,12 +13,12 @@ const addMovie = async (req, res) =>{
 
 const getAllMovies = async (req, res) => {
   try {
-    const response = await fetch('http://www.omdbapi.com/?apikey=77e30a1d&');
+    // Add a search parameter - OMDB requires one
+    const response = await fetch('http://www.omdbapi.com/?apikey=77e30a1d&s=movie');
     const data = await response.json();
     
     if (data.Response === 'True') {
-      res.json({ data: data.Search }); // Note the change to data.Search
-      console.log('api:',data.Search )
+      res.json({ data: data.Search });
     } else {
       res.status(404).json({ message: 'No movies found' });
     }

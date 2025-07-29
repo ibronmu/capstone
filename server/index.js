@@ -8,18 +8,18 @@ dotenv.config();
 connectDB();
 
 const app = express();
-const corsOptions = {
-  origin: 'http://localhost:5173', // Replace with your frontend URL
-  optionsSuccessStatus: 200
-};
-app.use(cors(corsOptions));
+app.use(cors({
+  origin: 'http://localhost:5173', // Your frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type']
+}))
 app.use(express.json());
 
 const authRoutes = require('./routes/authRoutes');
 const movieRoutes = require('./routes/movieroutes');
 const router = require('./routes/movieroutes');
 app.use('/movies',movieRoutes);
-app.use('auth',authRoutes)
+app.use('/auth',authRoutes)
 
 
 

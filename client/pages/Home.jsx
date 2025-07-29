@@ -10,7 +10,7 @@ const Home = () => {
 const fetchMovies = async()=>{
   try{
      const res = await api.get('/movies');
-      setAllMovies(res.data.data);
+      setAllMovies(res.data.search);
     } catch (err) {
       console.log(err.message)
     }
@@ -40,7 +40,7 @@ const fetchMovies = async()=>{
       {Movies.map(movie => (
         <MovieCard key={movie.id} movie={movie} /*onRate={fetchRecommendations}*/ />
       ))}
-      {allMovies.length === 0 && <p>Loading movies...</p>}
+      {/allMovies.length === 0 && <p>Loading movies...</p>}
       {allMovies.map(movie => (
         <MovieCard key={movie.id} movie={movie} /*onRate={fetchRecommendations}*/ />
       ))}
