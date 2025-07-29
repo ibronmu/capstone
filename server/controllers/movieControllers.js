@@ -12,16 +12,20 @@ const addMovie = async (req, res) =>{
 };
 
 const getAllMovies = async (req, res) => {
-   
   try {
-    const movies = await Movie.find();
-    res.json(movies);
+    const response = await fetch('http://www.omdbapi.com/?apikey=77e30a1d&');
+    const data = await response.json();
     
+    if (data.Response === 'True') {
+      res.json({ data: data.Search }); // Note the change to data.Search
+      console.log('api:',data.Search )
+    } else {
+      res.status(404).json({ message: 'No movies found' });
+    }
   } catch (err) {
-    res.status(500).json({ msg: err.message });
+    res.status(500).json({ message: err.message });
   }
-};
-
+}
 const getMovieById = async (req, res) => {
   try {
     const movie = await Movie.findById(req.params.id);
