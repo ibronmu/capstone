@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "an app for recommending movies",
   "main": "index.js",
+  "type":"module",
   "scripts": {
     "start": "nodemon index.js",
     "dev": "nodemon index.js"
@@ -10,7 +11,6 @@
   "author": "ibronmu",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^6.0.0",
     "cors": "^2.8.5",
     "dotenv": "^17.1.0",
     "express": "^5.1.0",
