@@ -25,4 +25,18 @@ router.delete('/:id', deleteMovie);
 router.post('/:id/like', likeMovie);
 router.post('/:id/rate', rateMovie);
 
+// // GET /api/user/me
+// router.get('/me', authMiddleware, async (req, res) => {
+//   const user = await User.findById(req.user.userId).select('-password');
+//   res.json(user);
+// });
+
+// // PUT /api/user/me
+// router.put('/me', authMiddleware, async (req, res) => {
+//   const { username, email } = req.body;
+//   const user = await User.findByIdAndUpdate(req.user.userId, { username, email }, { new: true });
+//   res.json(user);
+// });
+
+
 module.exports = router;
